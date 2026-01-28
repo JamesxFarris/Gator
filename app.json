@@ -1,0 +1,31 @@
+{
+  "name": "Gator",
+  "displayName": "Gator",
+  "expo": {
+    "name": "Gator",
+    "slug": "gator",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4AC7B6"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gator.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#4AC7B6"
+      },
+      "package": "com.gator.app"
+    }
+  }
+}
