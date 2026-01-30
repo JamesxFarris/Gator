@@ -11,7 +11,7 @@ import Animated, {
   Easing,
   interpolate,
 } from 'react-native-reanimated';
-import { GatorExpression, GatorAccessory } from '../../types';
+import { GatorExpression, GatorAccessory, GatorColor } from '../../types';
 import { colors } from '../../theme/colors';
 
 const AnimatedG = Animated.createAnimatedComponent(G);
@@ -23,6 +23,7 @@ interface GatorAvatarProps {
   size?: number;
   expression?: GatorExpression;
   accessory?: GatorAccessory;
+  color?: GatorColor;
   animated?: boolean;
 }
 
@@ -30,8 +31,11 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
   size = 200,
   expression = 'happy',
   accessory = 'none',
+  color = 'teal',
   animated = true,
 }) => {
+  // Get the color palette for the gator
+  const gatorColorPalette = colors.gatorColors[color];
   // Animation values
   const breathe = useSharedValue(0);
   const blink = useSharedValue(1);
@@ -241,7 +245,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
               cy={120}
               rx={70}
               ry={65}
-              fill={colors.gator.body}
+              fill={gatorColorPalette.body}
             />
             {/* Belly */}
             <Ellipse
@@ -249,7 +253,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
               cy={130}
               rx={45}
               ry={45}
-              fill={colors.gator.belly}
+              fill={gatorColorPalette.belly}
             />
             {/* Head bump */}
             <Ellipse
@@ -257,7 +261,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
               cy={70}
               rx={55}
               ry={45}
-              fill={colors.gator.body}
+              fill={gatorColorPalette.body}
             />
             {/* Snout */}
             <Ellipse
@@ -265,7 +269,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
               cy={100}
               rx={35}
               ry={25}
-              fill={colors.gator.body}
+              fill={gatorColorPalette.body}
             />
           </AnimatedG>
 
@@ -298,8 +302,8 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
           <Circle cx={130} cy={73} r={2} fill="white" />
 
           {/* Nostrils */}
-          <Ellipse cx={90} cy={95} rx={3} ry={4} fill={colors.gator.bodyDark} />
-          <Ellipse cx={110} cy={95} rx={3} ry={4} fill={colors.gator.bodyDark} />
+          <Ellipse cx={90} cy={95} rx={3} ry={4} fill={gatorColorPalette.dark} />
+          <Ellipse cx={110} cy={95} rx={3} ry={4} fill={gatorColorPalette.dark} />
 
           {/* Cheeks */}
           <Ellipse cx={55} cy={95} rx={12} ry={8} fill={colors.gator.cheeks} opacity={0.5} />
@@ -309,7 +313,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
           <Path
             d={getMouthPath()}
             fill="none"
-            stroke={colors.gator.bodyDark}
+            stroke={gatorColorPalette.dark}
             strokeWidth={3}
             strokeLinecap="round"
           />
@@ -320,7 +324,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
             cy={130}
             rx={15}
             ry={10}
-            fill={colors.gator.body}
+            fill={gatorColorPalette.body}
             transform="rotate(-30 40 130)"
           />
           <Ellipse
@@ -328,7 +332,7 @@ export const GatorAvatar: React.FC<GatorAvatarProps> = ({
             cy={130}
             rx={15}
             ry={10}
-            fill={colors.gator.body}
+            fill={gatorColorPalette.body}
             transform="rotate(30 160 130)"
           />
 

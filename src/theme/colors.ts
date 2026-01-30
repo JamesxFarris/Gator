@@ -76,13 +76,25 @@ export const colors = {
     dark: '#B8AFA5',
   },
 
-  // Gator specific colors
+  // Gator specific colors (default/legacy)
   gator: {
     body: '#4AC7B6',
     bodyDark: '#3AA89A',
     belly: '#8BDFD1',
     eyes: '#2D2A26',
     cheeks: '#FFB08B',
+  },
+
+  // Gator color palette for different gator colors
+  gatorColors: {
+    teal: { body: '#4AC7B6', dark: '#3AA89A', belly: '#8BDFD1' },
+    pink: { body: '#F8A5C2', dark: '#E88BA8', belly: '#FDCFDF' },
+    purple: { body: '#A78BFA', dark: '#8B5CF6', belly: '#C4B5FD' },
+    orange: { body: '#FFB08B', dark: '#E89566', belly: '#FFCDB3' },
+    blue: { body: '#7DD3FC', dark: '#38BDF8', belly: '#BAE6FD' },
+    green: { body: '#86EFAC', dark: '#4ADE80', belly: '#BBF7D0' },
+    yellow: { body: '#FDE047', dark: '#FACC15', belly: '#FEF08A' },
+    coral: { body: '#FDA4AF', dark: '#FB7185', belly: '#FECDD3' },
   },
 
   // Environment colors

@@ -10,6 +10,25 @@ export interface User {
 // Gator Types
 export type GatorExpression = 'happy' | 'excited' | 'sleepy' | 'encouraging' | 'neutral' | 'proud';
 
+// Gator color options
+export type GatorColor =
+  | 'teal'
+  | 'pink'
+  | 'purple'
+  | 'orange'
+  | 'blue'
+  | 'green'
+  | 'yellow'
+  | 'coral';
+
+// Future-proof: variant system for different gator types/animals
+export interface GatorVariant {
+  id: string;
+  type: 'gator';  // Can add 'dragon', 'turtle', etc. later
+  color: GatorColor;
+  unlockedAt: string;  // ISO date when hatched/unlocked
+}
+
 export type GatorAccessory =
   | 'none'
   | 'bow'
@@ -35,8 +54,10 @@ export interface Gator {
   expression: GatorExpression;
   accessory: GatorAccessory;
   environment: GatorEnvironment;
+  color: GatorColor;
   unlockedAccessories: GatorAccessory[];
   unlockedEnvironments: GatorEnvironment[];
+  variantId?: string;  // Future: link to unlocked variants
 }
 
 // Mood Types
@@ -127,6 +148,7 @@ export type RootStackParamList = {
 
 export type OnboardingStackParamList = {
   Welcome: undefined;
+  HatchEgg: undefined;
   NameGator: undefined;
   SelectHabits: undefined;
   SetReminder: undefined;
@@ -160,6 +182,8 @@ export interface GatorState {
   setExpression: (expression: GatorExpression) => void;
   setAccessory: (accessory: GatorAccessory) => void;
   setEnvironment: (environment: GatorEnvironment) => void;
+  setGatorColor: (color: GatorColor) => void;
+  hatchEgg: () => GatorColor;
   unlockAccessory: (accessory: GatorAccessory) => void;
   unlockEnvironment: (environment: GatorEnvironment) => void;
 }

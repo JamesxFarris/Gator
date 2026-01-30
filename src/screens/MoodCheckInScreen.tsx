@@ -64,6 +64,7 @@ export const MoodCheckInScreen: React.FC = () => {
             size={200}
             expression={getGatorExpression()}
             accessory={gator.accessory}
+            color={gator.color}
           />
           <Text variant="headingMedium" center style={styles.thankYou}>
             Thanks for checking in!
@@ -99,6 +100,7 @@ export const MoodCheckInScreen: React.FC = () => {
               size={120}
               expression={getGatorExpression()}
               accessory={gator.accessory}
+              color={gator.color}
             />
           </View>
 

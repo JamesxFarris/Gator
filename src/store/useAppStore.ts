@@ -8,6 +8,7 @@ import {
   GatorExpression,
   GatorAccessory,
   GatorEnvironment,
+  GatorColor,
   MoodEntry,
   MoodLevel,
   Habit,
@@ -19,6 +20,8 @@ import { generateId, getToday } from '../utils';
 import { defaultHabits } from '../data/habits';
 import { getLevelForExperience, getUnlocksForLevel } from '../data/levels';
 
+const GATOR_COLORS: GatorColor[] = ['teal', 'pink', 'purple', 'orange', 'blue', 'green', 'yellow', 'coral'];
+
 const initialGator: Gator = {
   name: 'Gator',
   level: 1,
@@ -26,6 +29,7 @@ const initialGator: Gator = {
   expression: 'happy',
   accessory: 'none',
   environment: 'pond',
+  color: 'teal',
   unlockedAccessories: ['none'],
   unlockedEnvironments: ['pond'],
 };
@@ -129,6 +133,17 @@ export const useAppStore = create<AppState>()(
               : [...state.gator.unlockedEnvironments, environment],
           },
         })),
+      setGatorColor: (color: GatorColor) =>
+        set((state) => ({
+          gator: { ...state.gator, color },
+        })),
+      hatchEgg: () => {
+        const randomColor = GATOR_COLORS[Math.floor(Math.random() * GATOR_COLORS.length)];
+        set((state) => ({
+          gator: { ...state.gator, color: randomColor },
+        }));
+        return randomColor;
+      },
 
       // Mood state
       moodEntries: [],

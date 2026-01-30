@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { Text } from '../../components/common/Text';
 import { Button } from '../../components/common/Button';
-import { GatorAvatar } from '../../components/gator/GatorAvatar';
+import { EggAvatar } from '../../components/gator/EggAvatar';
 import { OnboardingStackParamList } from '../../types';
 import { colors } from '../../theme/colors';
 import { spacing, layout } from '../../theme/spacing';
@@ -20,7 +20,7 @@ export const WelcomeScreen: React.FC = () => {
       <View style={styles.container}>
         <View style={styles.content}>
           <Animated.View entering={FadeInDown.delay(200).duration(600)}>
-            <GatorAvatar size={200} expression="excited" />
+            <EggAvatar size={200} />
           </Animated.View>
 
           <Animated.View
@@ -47,7 +47,7 @@ export const WelcomeScreen: React.FC = () => {
         >
           <Button
             title="Get Started"
-            onPress={() => navigation.navigate('NameGator')}
+            onPress={() => navigation.navigate('HatchEgg')}
             fullWidth
             size="large"
           />

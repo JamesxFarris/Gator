@@ -10,7 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { GatorAvatar } from './GatorAvatar';
 import { SpeechBubble } from './SpeechBubble';
-import { GatorExpression, GatorAccessory, GatorEnvironment } from '../../types';
+import { GatorExpression, GatorAccessory, GatorEnvironment, GatorColor } from '../../types';
 import { colors } from '../../theme/colors';
 import { spacing } from '../../theme/spacing';
 import { getGreeting, getExpressionMessage } from '../../data';
@@ -22,6 +22,7 @@ interface GatorSceneProps {
   expression?: GatorExpression;
   accessory?: GatorAccessory;
   environment?: GatorEnvironment;
+  color?: GatorColor;
   message?: string;
   showGreeting?: boolean;
   size?: number;
@@ -79,6 +80,7 @@ export const GatorScene: React.FC<GatorSceneProps> = ({
   expression = 'happy',
   accessory = 'none',
   environment = 'pond',
+  color = 'teal',
   message,
   showGreeting = true,
   size = 180,
@@ -178,6 +180,7 @@ export const GatorScene: React.FC<GatorSceneProps> = ({
             size={size}
             expression={expression}
             accessory={accessory}
+            color={color}
             animated
           />
         </Animated.View>

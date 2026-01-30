@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   WelcomeScreen,
+  HatchEggScreen,
   NameGatorScreen,
   SelectHabitsScreen,
   SetReminderScreen,
@@ -21,6 +22,7 @@ export const OnboardingNavigator: React.FC = () => {
       }}
     >
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Screen name="HatchEgg" component={HatchEggScreen} />
       <Stack.Screen name="NameGator" component={NameGatorScreen} />
       <Stack.Screen name="SelectHabits" component={SelectHabitsScreen} />
       <Stack.Screen name="SetReminder" component={SetReminderScreen} />

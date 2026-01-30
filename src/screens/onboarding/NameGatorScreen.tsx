@@ -14,7 +14,7 @@ import { Button } from '../../components/common/Button';
 import { Input } from '../../components/common/Input';
 import { GatorAvatar } from '../../components/gator/GatorAvatar';
 import { SpeechBubble } from '../../components/gator/SpeechBubble';
-import { useAppStore } from '../../store/useAppStore';
+import { useAppStore, useGator } from '../../store/useAppStore';
 import { OnboardingStackParamList } from '../../types';
 import { colors } from '../../theme/colors';
 import { spacing, layout } from '../../theme/spacing';
@@ -26,6 +26,7 @@ const suggestedNames = ['Gator', 'Snappy', 'Chompers', 'Swampy', 'Bubbles', 'Mar
 export const NameGatorScreen: React.FC = () => {
   const navigation = useNavigation<NameGatorNavigationProp>();
   const { setGatorName } = useAppStore();
+  const gator = useGator();
 
   const [name, setName] = useState('');
   const [error, setError] = useState('');
@@ -66,7 +67,7 @@ export const NameGatorScreen: React.FC = () => {
                 message="What would you like to call me?"
                 visible
               />
-              <GatorAvatar size={150} expression="happy" />
+              <GatorAvatar size={150} expression="happy" color={gator.color} />
             </Animated.View>
 
             <Animated.View

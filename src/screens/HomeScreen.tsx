@@ -88,6 +88,7 @@ export const HomeScreen: React.FC = () => {
           expression={gatorExpression}
           accessory={gator.accessory}
           environment={gator.environment}
+          color={gator.color}
           message={gatorMessage}
           showGreeting={!gatorMessage}
         />

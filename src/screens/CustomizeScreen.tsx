@@ -71,6 +71,7 @@ export const CustomizeScreen: React.FC = () => {
               size={150}
               expression="happy"
               accessory={gator.accessory}
+              color={gator.color}
             />
             <View style={styles.gatorInfo}>
               <Text variant="headingMedium">{gator.name}</Text>
@@ -145,6 +146,7 @@ export const CustomizeScreen: React.FC = () => {
                         size={80}
                         expression="happy"
                         accessory={accessory}
+                        color={gator.color}
                         animated={false}
                       />
                     ) : (

@@ -57,7 +57,7 @@ export const SetReminderScreen: React.FC = () => {
             message={`I can remind you to check in! When works best for you?`}
             visible
           />
-          <GatorAvatar size={140} expression="happy" accessory={gator.accessory} />
+          <GatorAvatar size={140} expression="happy" accessory={gator.accessory} color={gator.color} />
         </Animated.View>
 
         <Animated.View
